@@ -7,7 +7,9 @@ const rimrafAsync = util.promisify(rimraf);
 const mkdirpAsync = util.promisify(mkdirp);
 const ncpAsync = util.promisify(ncp);
 
-const buildPath = './build';
+//const buildPath = './build';
+const buildPathApi = './api';
+const buildPathApp = './public';
 
 const copyBuildFilesAsync = async (src, dest) => {
   try {
@@ -22,20 +24,23 @@ const copyBuildFilesAsync = async (src, dest) => {
 };
 
 // clean and build
-console.log(`Cleaning build path: ${buildPath}`);
+console.log(`Cleaning build path: ${buildPathApi} and ${buildPathApp}`);
 (build = async () => {
   try {
-    await rimrafAsync(buildPath);
+    await rimrafAsync(buildPathApi);
+    await rimrafAsync(buildPathApp);
 
     // server files
     const serverSrc = 'packages/server/build';
-    const serverDest = `${buildPath}`;
+    //const serverDest = `${buildPath}`;
+    const serverDest = `${buildPathApi}`;
     console.log(`Building server files`);
     await copyBuildFilesAsync(serverSrc, serverDest);
 
     // client files
     const clientSrc = 'packages/app/build';
-    const clientDest = `${buildPath}/app/build`;
+    //const clientDest = `${buildPath}/app/build`;
+    const clientDest = `${buildPathApp}`;
     console.log(`Building client files`);
     await copyBuildFilesAsync(clientSrc, clientDest);
 

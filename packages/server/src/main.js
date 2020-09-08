@@ -19,11 +19,11 @@ registerApis(app);
 // serve client app in production
 if (process.env.NODE_ENV === 'production') {
   // serve static files
-  app.use(express.static(path.resolve(__dirname, 'app/build')));
+  app.use(express.static(path.resolve(__dirname, '../public')));
 
   // return all requests to react app, let react-router handle routing 
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'app/build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, '../public', 'index.html'));
   });
 }
 
