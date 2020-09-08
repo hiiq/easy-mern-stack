@@ -29,7 +29,7 @@
     "client": "cd packages/app && yarn start",
     "server": "cd packages/server && yarn start",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "start": "node ./api/main.js",
+    "start": "node ./build/main.js",
     "build": "yarn client-build && yarn server-build && node tools/build.js",
     "client-add": "cd packages/app && yarn add",
     "client-remove": "cd packages/app && yarn remove",
