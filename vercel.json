@@ -2,30 +2,30 @@
     "routes": [
         {
             "src": "/api/(.*)",
-            "dest": "/build/main.js"
+            "dest": "main.js"
         },
         {
             "handle": "filesystem"
         },
         {
             "src": "/(.*).(js)",
-            "dest": "/build/app/build/static/js/$1.$2"
+            "dest": "app/build/static/js/$1.$2"
         },
         {
             "src": "/(.*).(css)",
-            "dest": "/build/app/build/static/css/$1.$2"
+            "dest": "app/build/static/css/$1.$2"
         },
         {
             "src": "/(.*).(svg)",
-            "dest": "/build/app/build/static/media/$1.$2"
+            "dest": "app/build/static/media/$1.$2"
         },
         {
             "src": "/(.*).(ico)",
-            "dest": "/build/app/build/$1.$2"
+            "dest": "app/build/$1.$2"
         },
         {
             "src": "/(.*)",
-            "dest": "/build/app/build/index.html"
+            "dest": "app/build/index.html"
         }
     ]
 }
