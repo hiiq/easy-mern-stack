@@ -32,7 +32,8 @@ app.listen(port, () => console.log(`Express listening on port ${port}`));
 
 // configure mongoose
 const mongoose = require('mongoose');
-const mongoUrl = 'mongodb://localhost:27017/easy-mern-stack-db';
+//const mongoUrl = 'mongodb://localhost:27017/easy-mern-stack-db';
+const mongoUrl = "mongodb+srv://new-user:Madison1!!@cluster0.ettza.mongodb.net/easy-mern-stack-db?retryWrites=true&w=majority";
 
 console.log('Mongoose attempting to connect to MongoDB');
 const db = mongoose.connection;
